@@ -1,0 +1,20 @@
+<h1 class="ui header">Boards</h1> | <%= link_to "New Board", new_board_path %>
+<table class="ui striped table">
+  <thead>
+    <tr class="center aligned">
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @boards.each do |b| %>
+  <tr class='center aligned'>
+      <td><h2><%= b.name %></h2></td>
+      <td><%= link_to 'See Tasks', list_tasks_path(b) %></td>
+      <td><%= link_to 'Edit Board', edit_board_path(b) %></td>
+      <td><%= link_to 'Delete Board', board_path(b), method: :delete %></td>
+      </tr>
+      </tbody>
+    <% end %>
+</table>
+

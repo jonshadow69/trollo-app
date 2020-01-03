@@ -1,0 +1,7 @@
+<h1><%= @board.name %></h1>
+
+<% @board.lists.each do |list| %>
+
+<h2><%= link_to list.name, list_task_path(list) %></h2>
+
+<% end %>

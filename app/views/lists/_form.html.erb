@@ -1,0 +1,11 @@
+<h1><%= @list.id ? 'Edit List Name' : 'Add A New List' %></h1>
+
+<%= form_with(model: @list, local: true, class: "ui form") do |l| %>
+  
+  <%= l.label :name %>
+  <%= l.text_field :name, required: true, autofocus: true %>
+  <br />
+
+  <%= l.submit nil, class: "ui button" %>
+
+<% end %>

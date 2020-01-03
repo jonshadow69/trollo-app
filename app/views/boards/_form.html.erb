@@ -1,0 +1,11 @@
+<h1><%= @board.id ? 'Edit Board Name' : 'Add A New Board' %></h1>
+
+<%= form_with(model: @board, local: true, class: "ui form") do |b| %>
+  
+  <%= b.label :name %>
+  <%= b.text_field :name, required: true, autofocus: true %>
+  <br />
+
+  <%= b.submit nil, class: "ui button" %>
+
+<% end %>
